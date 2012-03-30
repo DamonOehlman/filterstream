@@ -1,0 +1,21 @@
+# filterstream
+
+Filtering object streams in node using [matchme](https://github.com/DamonOehlman/matchme).
+
+## Example Usage
+
+Here's a quick example that I've tweaked from the [geonames](https://github.com/DamonOehlman/geonames) importer that I'm currently playing around with:
+
+```js
+var testItems = [];
+
+geonames
+    .read('countries/BV.txt'))
+    .pipe(filterstream('featureClass == A'))
+    .on('data', function(item) {
+        testItems.push(item);
+    })
+    .on('end', function() {
+        console.log(testItems);
+    });
+```

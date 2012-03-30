@@ -1,0 +1,29 @@
+{
+  "name": "filterstream",
+  "description": "Filter object streams in node using matchme",
+  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+  "tags": [ "query", "match", "filter" ],
+  "version": "0.0.1",
+  "main": "lib/filterstream",
+  "engines": {
+    "node": ">= 0.4.x < 0.7.0"
+  },
+  "dependencies": {
+    "matchme": "*"
+  },
+
+  "devDependencies": {
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DamonOehlman/filterstream.git"
+  },
+  "bugs": {
+    "url": "http://github.com/DamonOehlman/filterstream/issues"
+  },
+  
+  "scripts": { "test": "mocha --reporter spec" },
+  
+  "contributors": []
+}
