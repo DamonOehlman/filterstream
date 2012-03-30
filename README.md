@@ -15,7 +15,8 @@ npm install filterstream
 Here's a quick example that I've tweaked from the [geonames](https://github.com/DamonOehlman/geonames) importer that I'm currently playing around with:
 
 ```js
-var testItems = [];
+var geonames = require('geonames'),
+    testItems = [];
 
 geonames
     .read('countries/BV.txt'))
