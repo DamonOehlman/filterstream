@@ -13,6 +13,9 @@
   },
 
   "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*",
+    "csv": "https://github.com/DamonOehlman/node-csv-parser/tarball/master"
   },
 
   "repository": {
