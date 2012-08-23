@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/DamonOehlman/filterstream.png)](http://travis-ci.org/DamonOehlman/filterstream)
 # filterstream
 
 Filtering object streams in node using [matchme](https://github.com/DamonOehlman/matchme).
