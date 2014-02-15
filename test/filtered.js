@@ -1,43 +1,43 @@
-var csv = require('csv'),
-    filterstream = require('../lib/filterstream'),
-    path = require('path'),
-    expect = require('expect.js'),
-    datapath = path.resolve(__dirname, 'data/brisbane-parks.csv');
+var csv = require('csv');
+var filterstream = require('../');
+var path = require('path');
+var test = require('tape');
+var datapath = path.resolve(__dirname, 'data/brisbane-parks.csv');
 
-describe('filtered checks', function() {
-    it('should be able to filter on string properties', function(done) {
-        var count = 0;
-        
-        csv()
-            .fromPath(datapath, { columns: true })
-            .pipe(filterstream('Suburb == "Ferny Grove"'))
-            .on('data', function(item) {
-                count++;
-            })
-            .on('end', function() {
-                expect(count).to.equal(19);
-                done();
-            });
+test('filter on a string property', function(t) {
+  var count = 0;
+
+  t.plan(1);
+  
+  csv()
+    .from.path(datapath, { columns: true })
+    .pipe(filterstream('Suburb == "Ferny Grove"'))
+    .on('data', function(item) {
+      count++;
+    })
+    .on('end', function() {
+      t.equal(count, 19, 'ok');
     });
-    
-    it('should be able to filter on numeric properties', function(done) {
-        var count = 0;
-        
-        csv()
-            .fromPath(datapath, { columns: true })
-            .transform(function(data) {
-                data.Latitude = parseFloat(data.Latitude);
-                data.Longitude = parseFloat(data.Longitude);
-                
-                return data;
-            })
-            .pipe(filterstream('Latitude <= -27.61091533 && Latitude <= -27.6195995'))
-            .on('data', function(item) {
-                count++;
-            })
-            .on('end', function() {
-                expect(count).to.equal(103);
-                done();
-            });
+});
+
+test('filter on numeric properties', function(t) {
+  var count = 0;
+
+  t.plan(1);
+
+  csv()
+    .from.path(datapath, { columns: true })
+    .transform(function(data) {
+      data.Latitude = parseFloat(data.Latitude);
+      data.Longitude = parseFloat(data.Longitude);
+      
+      return data;
+    })
+    .pipe(filterstream('Latitude <= -27.61091533 && Latitude <= -27.6195995'))
+    .on('data', function(item) {
+      count++;
+    })
+    .on('end', function() {
+      t.equal(count, 103, 'ok');
     });
 });
