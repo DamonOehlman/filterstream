@@ -9,10 +9,6 @@ var through = require('through');
 
   ## Example Usage
 
-  Here's a quick example that I've tweaked from the
-  [geonames](https://github.com/DamonOehlman/geonames) importer that I'm
-  currently playing around with:
-
   <<< examples/brisbane-parks.js
 
 **/

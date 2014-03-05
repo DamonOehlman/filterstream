@@ -10,10 +10,6 @@ Filtering object streams in node using
 
 ## Example Usage
 
-Here's a quick example that I've tweaked from the
-[geonames](https://github.com/DamonOehlman/geonames) importer that I'm
-currently playing around with:
-
 ```js
 var csv = require('binary-csv');
 var fs = require('fs');
