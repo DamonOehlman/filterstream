@@ -29,12 +29,6 @@ test('filter on numeric properties', function(t) {
 
   fs.createReadStream(datapath)
     .pipe(csv({ json: true }))
-    .pipe(through(function(data) {
-      data.Latitude = parseFloat(data.Latitude);
-      data.Longitude = parseFloat(data.Longitude);
-      
-      this.queue(data);
-    }))
     .pipe(filterstream('Latitude <= -27.61091533 && Latitude <= -27.6195995'))
     .on('data', function(item) {
       count++;
