@@ -13,10 +13,8 @@
     "through": "~2.3.4"
   },
   "devDependencies": {
-    "csv": "~0.3.7",
     "tape": "^2.7.1",
-    "binary-csv": "^0.1.7",
-    "through": "^2.3.4"
+    "binary-csv": "^0.1.7"
   },
   "repository": {
     "type": "git",
@@ -26,7 +24,8 @@
     "url": "http://github.com/DamonOehlman/filterstream/issues"
   },
   "scripts": {
-    "test": "node test/all.js"
+    "test": "node test/all.js",
+    "gendocs": "gendocs > README.md"
   },
   "homepage": "https://github.com/DamonOehlman/filterstream",
   "main": "index.js",
