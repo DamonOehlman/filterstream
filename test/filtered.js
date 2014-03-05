@@ -4,7 +4,6 @@ var fs = require('fs');
 var path = require('path');
 var test = require('tape');
 var datapath = path.resolve(__dirname, 'data/brisbane-parks.csv');
-var through = require('through');
 
 test('filter on a string property', function(t) {
   var count = 0;
