@@ -1,4 +1,5 @@
-var csv = require('csv');
+var csv = require('binary-csv');
+var fs = require('fs');
 var path = require('path');
 var test = require('tape');
 var datapath = path.resolve(__dirname, 'data/brisbane-parks.csv');
@@ -8,8 +9,8 @@ test('check unfiltered file load', function(t) {
 
   t.plan(1);
 
-  csv()
-    .from.path(datapath, { columns: true })
+  fs.createReadStream(datapath)
+    .pipe(csv({ json: true }))
     .on('data', function(item) {
       count++
     })
