@@ -6,7 +6,7 @@ Filtering object streams in node using
 
 [![NPM](https://nodei.co/npm/filterstream.png)](https://nodei.co/npm/filterstream/)
 
-[![Build Status](https://travis-ci.org/DamonOehlman/filterstream.png?branch=master)](https://travis-ci.org/DamonOehlman/filterstream)
+[![Build Status](https://img.shields.io/travis/DamonOehlman/filterstream.svg?branch=master)](https://travis-ci.org/DamonOehlman/filterstream) 
 
 ## Example Usage
 
