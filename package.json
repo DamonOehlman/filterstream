@@ -7,7 +7,7 @@
     "match",
     "filter"
   ],
-  "version": "0.1.1",
+  "version": "1.0.0",
   "dependencies": {
     "matchme": "^2",
     "through": "^2"
