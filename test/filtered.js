@@ -9,10 +9,26 @@ test('filter on a string property', function(t) {
   var count = 0;
 
   t.plan(1);
-  
+
   fs.createReadStream(datapath)
     .pipe(csv({ json: true }))
-    .pipe(filterstream('Suburb == "Ferny Grove"'))
+    .pipe(filterstream('Suburb =~ "Ferny Grove"'))
+    .on('data', function(item) {
+      count++;
+    })
+    .on('end', function() {
+      t.equal(count, 19, 'ok');
+    });
+});
+
+test('filter on a string property (case sensitive matching)', function(t) {
+  var count = 0;
+
+  t.plan(1);
+
+  fs.createReadStream(datapath)
+    .pipe(csv({ json: true }))
+    .pipe(filterstream('Suburb == "FERNY GROVE"'))
     .on('data', function(item) {
       count++;
     })
