@@ -9,12 +9,12 @@
   ],
   "version": "0.1.1",
   "dependencies": {
-    "matchme": "~0.2.0",
-    "through": "~2.3.4"
+    "matchme": "^2",
+    "through": "^2"
   },
   "devDependencies": {
-    "tape": "^2.7.1",
-    "binary-csv": "^0.1.7"
+    "tape": "^2",
+    "binary-csv": "~0.2"
   },
   "repository": {
     "type": "git",
